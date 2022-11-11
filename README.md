@@ -5,9 +5,9 @@ An interactions.py bot made for QuestCraft
 
 NOTE: The token.txt file is required for this bot to work and must be in the same folder directory as the python file.
 - I will not include my personal token.txt file, however you can create one by following these steps below.
-    1. Download this python file
-    2. In the same folder as this file, create a new .txt document titled token.txt
-    3. Paste your token in the token.txt file you have created
+    1. Download the python file
+    2. In the same folder as the file, create a new .txt document titled token.txt
+    3. Paste your token into the token.txt file you have created
 - If you get an error where the file cannot be found:
     1. Make sure it is 100% in the same folder as your python file.
     2. (OPTIONAL) Use the exact file path to the file *format below*
