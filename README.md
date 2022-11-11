@@ -11,6 +11,7 @@ NOTE: The token.txt file is required for this bot to work and must be in the sam
 - If you get an error where the file cannot be found:
     1. Make sure it is 100% in the same folder as your python file.
     2. (OPTIONAL) Use the exact file path to the file *format below*
+        
         file = open(r"C:\Users\Example\Document\pythonBot\token.txt\")
 
 - Credits to the interactions.py Discord developers for advice on certain parts of the program.
