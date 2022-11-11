@@ -10,7 +10,7 @@ NOTE: The token.txt file is required for this bot to work and must be in the sam
     3. Paste your token into the token.txt file you have created
 - If you get an error where the file cannot be found:
     1. Make sure it is 100% in the same folder as your python file.
-    2. (OPTIONAL) Use the exact file path to the file *format below*
+    2. (After option 1 and file still can't be read) Use the exact file path to the file *format below*
         
         file = open(r"C:\Users\Example\Document\pythonBot\token.txt\")
 
