@@ -7,6 +7,7 @@ NOTE: The token.txt file is required for this bot to work and must be in the sam
 
 - I have not included the token.txt file as I do not want to leak my bot token (am smart)
 
+<br>
 
 Credits to the interactions.py Discord developers for advice on certain parts of the program.
 
