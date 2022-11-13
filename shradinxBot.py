@@ -1,13 +1,12 @@
 # shradinxBot.py
 # Shradinx
-# November 11, 2022
+# November 12, 2022
 # Interactions.py bot made for QuestCraft
 # ------------------------------------------------------------------------------
 
 # Import all modules needed for bot.
 import interactions
 from interactions import autodefer
-import asyncio
 import random
 
 # Open the bot token file and read for the token
@@ -15,18 +14,27 @@ botToken = open("token.txt", "r")
 botToken = botToken.read()
 
 # Set the client variable along with token and presence
-client = interactions.Client(token=botToken, presence=interactions.ClientPresence(
-        status=interactions.StatusType.ONLINE,
-        activities=[
-            interactions.PresenceActivity(name="#announcements for 3.0 ping",
-                                          type=interactions.PresenceActivityType.WATCHING)
-        ]
-    ))
+client = interactions.Client(intents=interactions.Intents.DEFAULT | interactions.Intents.GUILD_MESSAGE_CONTENT,
+                             token=botToken, presence=interactions.ClientPresence(
+                                status=interactions.StatusType.ONLINE,
+                                activities=[
+                                    interactions.PresenceActivity(name="#announcements for 3.0 ping",
+                                                                  type=interactions.PresenceActivityType.WATCHING)
+                                ]
+                                )
+                             )
 
 # Initiate bot and print bot activation message
-@client.event
+@client.event()
 async def on_ready():
     print('ShradinxBot Activated!')
+
+@client.event()
+async def on_message_create(message: interactions.Message):
+    if "is qc fix" in message.content.lower():
+        channel = await message.get_channel()
+        await channel.send("no")
+
 
 # Random number command: Returns a number between 1 and 100000 to the user
 @client.command(
@@ -148,7 +156,6 @@ async def shradinxQCFix(ctx):
             # Add 1 to the total for each message found
             total += 1
     print(ctx.author.name, "ran shradinxqcfix command.")
-
     await ctx.send(f"Shradinx has said \"is qc fix\" {total} times")
 
 # Isqcfix command: Prints "no fuck you"
@@ -184,7 +191,7 @@ async def users(ctx):
 # Jenny command: prints "soon:tm:"
 @client.command(
     name="jenny",
-    description="When will the jenny mod be made",
+    description="When will the jenny mod be ported to QuestCraft",
     scope=1039592132014522460,
 )
 async def jenny(ctx):
