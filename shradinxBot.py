@@ -39,7 +39,6 @@ async def on_message_create(message: interactions.Message):
         channel = await message.get_channel()
         await channel.send("no")
 
-
 # Random number command: Returns a number between 1 and 100000 to the user
 @client.command(
     name="random_number",
