@@ -32,14 +32,6 @@ client = interactions.Client(intents=interactions.Intents.DEFAULT | interactions
 async def on_ready():
     print('QuestCraft_Bot_Python Activated!')
 
-# When a message is sent, if it contains "is qc fix", respond with "no"
-@client.event()
-async def on_message_create(message: interactions.Message):
-    if "is qc fix" in message.content.lower():
-        channel = await message.get_channel()
-        await channel.send("no")
-
-
 # Random number command: Returns a number between 1 and 100000 to the user
 @client.command(
     name="random_number",
