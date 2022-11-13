@@ -205,6 +205,28 @@ async def jenny(ctx):
 async def qctutorial(ctx):
     print(ctx.author.name, "ran the qctutorial command.")
     await ctx.send("This video is not endorsed by the QC team, but made by my creator. "
-                   "https://www.youtube.com/watch?v=TLWR_3hEBJU")
+                   "https://www.youtube.com/watch?v=TLWR_3hEBJU  If this tutorial is too hard or "
+                   "you cannot understand, please check out /qcfix2")
+
+# Qctutorial2 command: prints "This is the second tutorial if you dont understand the first.
+#                               https://youtu.be/gP5Kn9ddI2U"
+@client.command(
+    name="qctutorial2",
+    description="Tutorial fix2.",
+    scope=serverID,
+)
+async def qctutorial2(ctx):
+    print(ctx.author.name, "ran the qctutorial2 command.")
+    await ctx.send("This is the second tutorial if you dont understand the first. https://youtu.be/gP5Kn9ddI2U")
+
+@client.command(
+    name="modlist",
+    description="A list of all supported QuestCraft mods.",
+    scope=serverID,
+)
+async def modlist(ctx):
+    print(ctx.author.name, "ran the modlist command.")
+    await ctx.send("Here is a list of all supported mods on QuestCraft. \n"
+                   "<https://docs.google.com/spreadsheets/d/16SopyOPDz3OrL4qcWwMPzL9s_5Uhl5Q-aRIePY6ztSA/edit#gid=0>")
 
 client.start()
