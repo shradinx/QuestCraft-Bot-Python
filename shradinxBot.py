@@ -1,6 +1,6 @@
 # shradinxBot.py
 # Shradinx
-# November 12, 2022
+# November 13, 2022
 # Interactions.py bot made for QuestCraft
 # ------------------------------------------------------------------------------
 
@@ -39,6 +39,7 @@ async def on_message_create(message: interactions.Message):
         channel = await message.get_channel()
         await channel.send("no")
 
+
 # Random number command: Returns a number between 1 and 100000 to the user
 @client.command(
     name="random_number",
@@ -68,7 +69,7 @@ async def drugs(ctx):
     scope=serverID
 )
 async def ping(ctx):
-    print(ctx.author.name, "ran ping command")
+    print(ctx.author.name, "ran ping command.")
     await ctx.send("Pong!")
 
 # Soon command: Print "Soon™: a moment between the next minute and the heat death of the universe."
@@ -78,7 +79,7 @@ async def ping(ctx):
     scope=serverID
 )
 async def soon(ctx):
-    print(ctx.author.name, "ran soon command")
+    print(ctx.author.name, "ran soon command.")
     await ctx.send("Soon™: a moment between the next minute and the heat death of the universe.")
 
 # Fixed command: Print "**no**, you will get an @ everyone when it gets done."
@@ -88,7 +89,7 @@ async def soon(ctx):
     scope=serverID
 )
 async def fixed(ctx):
-    print(ctx.author.name, "ran fixed command")
+    print(ctx.author.name, "ran fixed command.")
     await ctx.send("**no**, you will get an @ everyone when it gets done.")
 
 # v3info command: Print "In QCXR V3.0, we are departing from using MCXR, to Vivecraft."
@@ -98,7 +99,7 @@ async def fixed(ctx):
     scope=serverID
 )
 async def v3info(ctx):
-    print(ctx.author.name, "ran v3info command")
+    print(ctx.author.name, "ran v3info command.")
     await ctx.send("In QCXR V3.0, we are departing from using MCXR, to Vivecraft.")
 
 # When command: Print "It will come out when Pojlib is done, which is in development, "
@@ -109,7 +110,7 @@ async def v3info(ctx):
     scope=serverID
 )
 async def when(ctx):
-    print(ctx.author.name, "ran when command")
+    print(ctx.author.name, "ran when command.")
     await ctx.send("It will come out when Pojlib is done, which is in development, "
                    "but may take a bit to finish. We will never have a ETA.")
 
@@ -120,7 +121,7 @@ async def when(ctx):
     scope=serverID
 )
 async def why(ctx):
-    print(ctx.author.name, "ran why command")
+    print(ctx.author.name, "ran why command.")
     await ctx.send("Questcraft is broken due to v44 breaking the way we started OpenXR (2d --> 3d)")
 
 # YVR command: Print "YVR is a Chinese headset company. They have requested YVRCraft. "
@@ -131,7 +132,7 @@ async def why(ctx):
     scope=serverID
 )
 async def yvr(ctx):
-    print(ctx.author.name, "ran yvr command")
+    print(ctx.author.name, "ran yvr command.")
     await ctx.send("YVR is a Chinese headset company. They have requested YVRCraft. "
                    "We are working on both QCXR and YVRCraft.")
 
@@ -199,7 +200,19 @@ async def users(ctx):
     scope=serverID,
 )
 async def jenny(ctx):
-    print(ctx.author.name, "ran the jenny command")
+    print(ctx.author.name, "ran the jenny command.")
     await ctx.send("soon:tm:")
+
+# Qctutorial command: prints "This video is not endorsed by the QC team, but made by my creator.
+#                            https://www.youtube.com/watch?v=TLWR_3hEBJU"
+@client.command(
+    name="qctutorial",
+    description="Tutorial fix.",
+    scope=serverID,
+)
+async def qctutorial(ctx):
+    print(ctx.author.name, "ran the qctutorial command.")
+    await ctx.send("This video is not endorsed by the QC team, but made by my creator. "
+                   "https://www.youtube.com/watch?v=TLWR_3hEBJU")
 
 client.start()
