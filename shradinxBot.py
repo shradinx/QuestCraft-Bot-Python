@@ -82,7 +82,7 @@ async def soon(ctx):
     print(ctx.author.name, "ran soon command.")
     await ctx.send("Soon™: a moment between the next minute and the heat death of the universe.")
 
-# Fixed command: Print "**no**, you will get an @ everyone when it gets done."
+# Fixed command: Print "**kinda**, you will get an @ everyone when it gets done. There is a workaround though."
 @client.command(
     name="fixed",
     description="Is QC Fixed?",
@@ -90,7 +90,7 @@ async def soon(ctx):
 )
 async def fixed(ctx):
     print(ctx.author.name, "ran fixed command.")
-    await ctx.send("**no**, you will get an @ everyone when it gets done.")
+    await ctx.send("**kinda**, you will get an @ everyone when it gets done. There is a workaround though.")
 
 # v3info command: Print "In QCXR V3.0, we are departing from using MCXR, to Vivecraft."
 @client.command(
