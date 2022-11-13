@@ -27,7 +27,7 @@ client = interactions.Client(intents=interactions.Intents.DEFAULT | interactions
 # Initiate bot and print bot activation message
 @client.event()
 async def on_ready():
-    print('QuestCraft-Bot-Python Activated!')
+    print('QuestCraft_Bot_Python Activated!')
 
 @client.event()
 async def on_message_create(message: interactions.Message):
