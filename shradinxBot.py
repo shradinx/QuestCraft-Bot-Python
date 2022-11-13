@@ -13,6 +13,9 @@ import random
 botToken = open("token.txt", "r")
 botToken = botToken.read()
 
+# Set server ID
+serverID = 1039592132014522460
+
 # Set the client variable along with token, intents, and presence
 client = interactions.Client(intents=interactions.Intents.DEFAULT | interactions.Intents.GUILD_MESSAGE_CONTENT,
                              token=botToken, presence=interactions.ClientPresence(
@@ -41,7 +44,7 @@ async def on_message_create(message: interactions.Message):
 @client.command(
     name="random_number",
     description="Get a random number between 1 and 100000",
-    scope=1039592132014522460,
+    scope=serverID,
 )
 async def random_number(ctx):
     # Set message to be printed and get random number
@@ -53,7 +56,7 @@ async def random_number(ctx):
 @client.command(
     name="drugs",
     description="Drugs",
-    scope=1039592132014522460,
+    scope=serverID,
 )
 async def drugs(ctx):
     print(ctx.author.name, "ran drugs command.")
@@ -63,7 +66,7 @@ async def drugs(ctx):
 @client.command(
     name="ping",
     description="Ping SMH",
-    scope=1039592132014522460
+    scope=serverID
 )
 async def ping(ctx):
     print(ctx.author.name, "ran ping command")
@@ -73,7 +76,7 @@ async def ping(ctx):
 @client.command(
     name="soon",
     description="Replies with soon:tm:",
-    scope=1039592132014522460
+    scope=serverID
 )
 async def soon(ctx):
     print(ctx.author.name, "ran soon command")
@@ -83,7 +86,7 @@ async def soon(ctx):
 @client.command(
     name="fixed",
     description="Is QC Fixed?",
-    scope=1039592132014522460
+    scope=serverID
 )
 async def fixed(ctx):
     print(ctx.author.name, "ran fixed command")
@@ -93,7 +96,7 @@ async def fixed(ctx):
 @client.command(
     name="v3info",
     description="Info about V3",
-    scope=1039592132014522460
+    scope=serverID
 )
 async def v3info(ctx):
     print(ctx.author.name, "ran v3info command")
@@ -104,7 +107,7 @@ async def v3info(ctx):
 @client.command(
     name="when",
     description="Tells you when it comes out.",
-    scope=1039592132014522460
+    scope=serverID
 )
 async def when(ctx):
     print(ctx.author.name, "ran when command")
@@ -115,7 +118,7 @@ async def when(ctx):
 @client.command(
     name="why",
     description="Tells you why QC is broken",
-    scope=1039592132014522460
+    scope=serverID
 )
 async def why(ctx):
     print(ctx.author.name, "ran why command")
@@ -126,7 +129,7 @@ async def why(ctx):
 @client.command(
     name="yvr",
     description="Tells you what YVR is.",
-    scope=1039592132014522460
+    scope=serverID
 )
 async def yvr(ctx):
     print(ctx.author.name, "ran yvr command")
@@ -137,12 +140,13 @@ async def yvr(ctx):
 @client.command(
     name="shradinxqcfix",
     description="Provides how many times Shradinx has said \"is qc fix\" ",
-    scope=1039592132014522460,
+    scope=serverID,
 )
 @autodefer(delay=1)
 async def shradinxQCFix(ctx):
-    # get the guild/server info
-    guild = await interactions.get(client, interactions.Guild, object_id=1039592132014522460)
+    # Get guild/server info
+    guild = await interactions.get(client, interactions.Guild, object_id=serverID)
+    # Set the initial total value
     total = 0
     # Return Shradinx's user ID and message.content containing "is qc fix"
     def check(message):
@@ -163,7 +167,7 @@ async def shradinxQCFix(ctx):
 @client.command(
     name="isqcfix",
     description="is qc fixed :fancytroll:",
-    scope=1039592132014522460,
+    scope=serverID,
 )
 async def isQCFix(ctx):
     print(ctx.author.name, "ran isqcfix command.")
@@ -173,12 +177,12 @@ async def isQCFix(ctx):
 @client.command(
     name="users",
     description="replies with all users able to run bot commands",
-    scope=1039592132014522460,
+    scope=serverID,
 )
 async def users(ctx):
     roleList = []
     # Get guild/server info
-    guild = await interactions.get(client, interactions.Guild, object_id=1039592132014522460)
+    guild = await interactions.get(client, interactions.Guild, object_id=serverID)
     # Get all roles in the server
     roles = await guild.get_all_roles()
     # For all the roles in the server, search for all that have USE_APPLICATION_COMMANDS permission.
@@ -193,7 +197,7 @@ async def users(ctx):
 @client.command(
     name="jenny",
     description="When will the jenny mod be ported to QuestCraft",
-    scope=1039592132014522460,
+    scope=serverID,
 )
 async def jenny(ctx):
     print(ctx.author.name, "ran the jenny command")
