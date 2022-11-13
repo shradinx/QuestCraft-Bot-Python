@@ -13,7 +13,7 @@ import random
 botToken = open("token.txt", "r")
 botToken = botToken.read()
 
-# Set the client variable along with token and presence
+# Set the client variable along with token, intents, and presence
 client = interactions.Client(intents=interactions.Intents.DEFAULT | interactions.Intents.GUILD_MESSAGE_CONTENT,
                              token=botToken, presence=interactions.ClientPresence(
                                 status=interactions.StatusType.ONLINE,
@@ -29,6 +29,7 @@ client = interactions.Client(intents=interactions.Intents.DEFAULT | interactions
 async def on_ready():
     print('QuestCraft_Bot_Python Activated!')
 
+# When a message is sent, if it contains "is qc fix", respond with "no"
 @client.event()
 async def on_message_create(message: interactions.Message):
     if "is qc fix" in message.content.lower():
