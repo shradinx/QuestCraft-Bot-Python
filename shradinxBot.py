@@ -219,6 +219,9 @@ async def qctutorial2(ctx):
     print(ctx.author.name, "ran the qctutorial2 command.")
     await ctx.send("This is the second tutorial if you dont understand the first. https://youtu.be/gP5Kn9ddI2U")
 
+# Modlist command: print "Here is a list of all supported mods on QuestCraft. \n"
+#                        "<https://docs.google.com/spreadsheets/d/16SopyOPDz3OrL4qcWwMPzL9s_5Uhl5Q
+#                        -aRIePY6ztSA/edit#gid=0>"
 @client.command(
     name="modlist",
     description="A list of all supported QuestCraft mods.",
